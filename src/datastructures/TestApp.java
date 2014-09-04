@@ -1,6 +1,12 @@
 package datastructures;
 
 import datastructures.ch2.HighArray;
+import datastructures.ch3.BubbleArray;
+import datastructures.ch3.InsertionArray;
+import datastructures.ch3.SelectionArray;
+
+import java.util.Date;
+import java.util.Random;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,36 +18,59 @@ public class TestApp {
 
     public static void main(String[] args) {
 
-        int maxSize = 100;
-        HighArray highArray = new HighArray(maxSize);
+        performSort(new TestApp());
+    }
 
-        highArray.insert(77); // insert 10 items
-        highArray.insert(99);
-        highArray.insert(44);
-        highArray.insert(55);
-        highArray.insert(22);
-        highArray.insert(88);
-        highArray.insert(11);
-        highArray.insert(00);
-        highArray.insert(66);
-        highArray.insert(33);
+    private static void performSort(TestApp testApp) {
+        Date start = new Date();
 
-        System.out.println(highArray.toString());
+        System.out.println("Sort started @ " + start.getTime());
 
-        int searchElement = 35;
-        if(highArray.find(searchElement)) {
+        //testApp.testBubbleSort();
+        //testApp.testSelectionSort();
+        testApp.testInsertionSort();
 
-            System.out.println("Found " + searchElement);
+        Date end = new Date();
+        System.out.println("Sort ended @ " + end.getTime());
+        System.out.println("Total time = " + (end.getTime() - start.getTime())/1000.0 + " seconds...");
+    }
+
+    private void testBubbleSort() {
+
+        int size = 100000;
+
+        BubbleArray bubbleArray = new BubbleArray(size);
+
+        for(int i = 0; i < size; i++) {
+            bubbleArray.insert(new Random().nextLong());
         }
-        else {
 
-            System.out.println("Can't find " + searchElement);
+        bubbleArray.sort();
+    }
+
+    private void testSelectionSort() {
+
+        int size = 100000;
+
+        SelectionArray selectionArray = new SelectionArray(size);
+
+        for(int i = 0; i < size; i++) {
+            selectionArray.insert(new Random().nextLong());
         }
 
-        highArray.delete(00);
-        highArray.delete(55);
-        highArray.delete(99);
+        selectionArray.sort();
+    }
 
-        System.out.println(highArray.toString());
+    private void testInsertionSort() {
+
+        int size = 100000;
+
+        InsertionArray insertionArray = new InsertionArray(size);
+
+        for(int i = 0; i < size; i++) {
+            insertionArray.insert(new Random().nextLong());
+        }
+
+        insertionArray.sort();
     }
 }
