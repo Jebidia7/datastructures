@@ -4,7 +4,13 @@ import datastructures.ch2.HighArray;
 import datastructures.ch3.BubbleArray;
 import datastructures.ch3.InsertionArray;
 import datastructures.ch3.SelectionArray;
+import datastructures.ch4.PriorityQueue;
+import datastructures.ch4.Reverser;
+import datastructures.ch5.LinkedList;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Date;
 import java.util.Random;
 
@@ -22,17 +28,23 @@ public class TestApp {
     }
 
     private static void performSort(TestApp testApp) {
+        /*
         Date start = new Date();
-
         System.out.println("Sort started @ " + start.getTime());
+        */
 
         //testApp.testBubbleSort();
         //testApp.testSelectionSort();
-        testApp.testInsertionSort();
+        //testApp.testInsertionSort();
+        //testApp.testStackReverser();
+        //testApp.testPriorityQueue();
+        testApp.testLinkedList();
 
+        /*
         Date end = new Date();
         System.out.println("Sort ended @ " + end.getTime());
         System.out.println("Total time = " + (end.getTime() - start.getTime())/1000.0 + " seconds...");
+        */
     }
 
     private void testBubbleSort() {
@@ -72,5 +84,65 @@ public class TestApp {
         }
 
         insertionArray.sort();
+    }
+
+    private void testStackReverser() {
+
+        String input, output;
+        while(true) {
+
+            System.out.print("Enter a string: ");
+            System.out.flush();
+            try {
+                input =
+                        new BufferedReader(
+                                new InputStreamReader(System.in)).readLine();
+                if(input.equals("")) {
+                    break;
+                }
+
+                Reverser reverser = new Reverser(input);
+                output = reverser.reverse();
+                System.out.println("Reversed: " + output);
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void testPriorityQueue() {
+
+        PriorityQueue priorityQueue = new PriorityQueue(5);
+        priorityQueue.insert(30);
+        priorityQueue.insert(50);
+        priorityQueue.insert(10);
+        priorityQueue.insert(40);
+        priorityQueue.insert(20);
+
+        while(!priorityQueue.isEmpty()) {
+
+            long element = priorityQueue.remove();
+
+            System.out.println(element + " ");
+        }
+    }
+
+    private void testLinkedList() {
+
+        LinkedList<Integer> list = new LinkedList<Integer>();
+        list.insertFirst(10);
+        list.insertFirst(20);
+        list.insertFirst(40);
+        list.insertFirst(80);
+
+        System.out.println("list contents: " + list.toString());
+
+        System.out.println("searching for 20: " + (list.find(20) == null));
+        System.out.println("searching for 30: " + (list.find(20) == null));
+
+        list.remove(20);
+
+        System.out.println("removed 20. list contents: " + list.toString());
     }
 }
