@@ -6,6 +6,7 @@ package datastructures.specs;
  * Date: 9/4/14
  * Time: 3:21 PM
  */
-public interface Element<T> extends Comparable<Searchable> {
+public interface Element<T> extends Comparable<Element<T>>, Searchable {
     // forces compareTo(T o) from Comparable
+    public T get();
 }

@@ -6,15 +6,15 @@ package datastructures.specs;
  * Date: 9/4/14
  * Time: 3:51 PM
  */
-public interface Node<Element> {
+public interface Node {
 
     public Element element();
 
-    public void setNext(Node<Element> node);
+    public void setNext(Node next);
 
-    public Node<Element> getNext();
+    public Node getNext();
 
-    public void setPrevious(Node<Element> node);
+    public void setPrevious(Node previous);
 
-    public Node<Element> getPrevious();
+    public Node getPrevious();
 }

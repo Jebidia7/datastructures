@@ -6,7 +6,7 @@ package datastructures.specs;
  * Date: 9/4/14
  * Time: 3:37 PM
  */
-public interface List<Element> {
+public interface List {
 
     public void insert(Element element);
 
