@@ -11,7 +11,7 @@ import datastructures.specs.Node;
  */
 public class IntNode implements Node {
 
-    private IntElement element;
+    private Element<Integer> element;
     private Node next;
     private Node previous;
 

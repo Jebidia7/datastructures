@@ -21,8 +21,8 @@ public class IntElement implements Element<Integer> {
     @Override
     public int compareTo(Element<Integer> o) {
 
-        long me = getSearchKey();
-        long other = o.getSearchKey();
+        long me = searchBy();
+        long other = o.searchBy();
 
         if(me == other) {
             return 0;
@@ -42,7 +42,7 @@ public class IntElement implements Element<Integer> {
     }
 
     @Override
-    public long getSearchKey() {
+    public long searchBy() {
 
         return value;
     }
