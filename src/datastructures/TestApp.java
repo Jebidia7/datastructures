@@ -11,8 +11,7 @@ import datastructures.ch5.LinkedList;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Date;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,7 +23,19 @@ public class TestApp {
 
     public static void main(String[] args) {
 
-        performSort(new TestApp());
+        //performSort(new TestApp());
+        java.util.LinkedList<Integer> linkedList = new java.util.LinkedList<Integer>();
+        Iterator<Integer> one = linkedList.iterator();
+        Iterator<Integer> two;
+        while(one.hasNext()) {
+            Integer element = one.next();
+            two = linkedList.iterator();
+            while(two.hasNext()) {
+                ListIterator listIterator = linkedList.listIterator();
+                listIterator.nextIndex();
+            }
+
+        }
     }
 
     private static void performSort(TestApp testApp) {

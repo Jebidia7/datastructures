@@ -3,7 +3,7 @@ package datastructures.specs.impl;
 import datastructures.specs.Element;
 import datastructures.specs.Iterator;
 import datastructures.specs.List;
-import datastructures.specs.Node;
+import datastructures.specs.ListNode;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,12 +11,12 @@ import datastructures.specs.Node;
  * Date: 9/6/14
  * Time: 1:50 PM
  */
-public class ListIterator implements Iterator<Node> {
+public class ListIterator implements Iterator<ListNode> {
 
-    private List<Node> list;
-    private Node position;
+    private List<ListNode> list;
+    private ListNode position;
 
-    public ListIterator(List<Node> list) {
+    public ListIterator(List<ListNode> list) {
 
         this.list = list;
     }
@@ -28,7 +28,7 @@ public class ListIterator implements Iterator<Node> {
     }
 
     @Override
-    public Node next() {
+    public ListNode next() {
         
         if(!hasNext()) {
             // already at last element in the list
@@ -47,7 +47,7 @@ public class ListIterator implements Iterator<Node> {
     }
 
     @Override
-    public Node previous() {
+    public ListNode previous() {
 
         if(!hasPrevious()) {
             // already at last element in the list
@@ -72,12 +72,12 @@ public class ListIterator implements Iterator<Node> {
     }
 
     @Override
-    public void insertBefore(Element<Node> element) {
+    public void insertBefore(Element<ListNode> element) {
         //To change body of implemented methods use File | Settings | File Templates.
     }
 
     @Override
-    public void insertAfter(Element<Node> element) {
+    public void insertAfter(Element<ListNode> element) {
         //To change body of implemented methods use File | Settings | File Templates.
     }
 }

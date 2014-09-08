@@ -1,7 +1,7 @@
 package datastructures.specs.impl;
 
 import datastructures.specs.Element;
-import datastructures.specs.Node;
+import datastructures.specs.ListNode;
 
 /**
  * Created with IntelliJ IDEA.
@@ -9,11 +9,11 @@ import datastructures.specs.Node;
  * Date: 9/5/14
  * Time: 11:03 AM
  */
-public class IntNode implements Node {
+public class IntNode implements ListNode {
 
     private Element<Integer> element;
-    private Node next;
-    private Node previous;
+    private ListNode next;
+    private ListNode previous;
 
     public IntNode(IntElement element) {
 
@@ -27,25 +27,25 @@ public class IntNode implements Node {
     }
 
     @Override
-    public void setNext(Node next) {
+    public void setNext(ListNode next) {
 
         this.next = next;
     }
 
     @Override
-    public Node getNext() {
+    public ListNode getNext() {
 
         return next;
     }
 
     @Override
-    public void setPrevious(Node previous) {
+    public void setPrevious(ListNode previous) {
 
         this.previous = previous;
     }
 
     @Override
-    public Node getPrevious() {
+    public ListNode getPrevious() {
 
         return previous;
     }
