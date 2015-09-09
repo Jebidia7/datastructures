@@ -7,6 +7,8 @@ import datastructures.ch3.SelectionArray;
 import datastructures.ch4.PriorityQueue;
 import datastructures.ch4.Reverser;
 import datastructures.ch5.LinkedList;
+import datastructures.ch6.TriangularNumber;
+import datastructures.ch7.ShellSort;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -38,7 +40,9 @@ public class TestApp {
         //testApp.testInsertionSort();
         //testApp.testStackReverser();
         //testApp.testPriorityQueue();
-        testApp.testLinkedList();
+        //testApp.testLinkedList();
+        //testApp.testTriangleNumbers();
+        testApp.testShellSorting();
 
         /*
         Date end = new Date();
@@ -144,5 +148,30 @@ public class TestApp {
         list.remove(20);
 
         System.out.println("removed 20. list contents: " + list.toString());
+    }
+
+    private void testTriangleNumbers() {
+
+        TriangularNumber triangularNumber = new TriangularNumber();
+
+        System.out.println(triangularNumber.triangle(10));
+        System.out.println(triangularNumber.triangle(4));
+    }
+
+    private void testShellSorting() {
+
+        int maxSize = 10000;
+        HighArray array = new HighArray(maxSize);
+        ShellSort shellSort = new ShellSort(array);
+
+        for(int i = 0; i < maxSize; i++) {
+
+            long n = (int)(Math.random() * 9999);
+            array.insert(n);
+        }
+
+        System.out.println("Time: " + System.currentTimeMillis() + " - " + array.toString());
+        shellSort.shellSort();
+        System.out.println("Time: " + System.currentTimeMillis() + " - " + array.toString());
     }
 }

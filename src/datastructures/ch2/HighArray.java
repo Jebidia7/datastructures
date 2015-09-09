@@ -57,6 +57,16 @@ public class HighArray {
         return found;
     }
 
+    public int size() {
+
+        return numberOfElements;
+    }
+
+    public long[] array() {
+
+        return a;
+    }
+
     public String toString() {
 
         StringBuilder sb = new StringBuilder();
