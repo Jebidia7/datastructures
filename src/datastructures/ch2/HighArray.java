@@ -10,11 +10,13 @@ public class HighArray {
 
     private long[] a;
     private int numberOfElements;
+    private long maxElement;
 
     public HighArray(int maxSize) {
 
         a = new long[maxSize];
         numberOfElements = 0;
+        maxElement = 0;
     }
 
     public boolean find(long element) {
@@ -33,6 +35,10 @@ public class HighArray {
     public void insert(long element) {
 
         a[numberOfElements++] = element;
+
+        if(element > maxElement) {
+            maxElement = element;
+        }
     }
 
     public boolean delete(long element) {
@@ -60,6 +66,10 @@ public class HighArray {
     public int size() {
 
         return numberOfElements;
+    }
+
+    public long getMaxElement() {
+        return maxElement;
     }
 
     public long[] array() {

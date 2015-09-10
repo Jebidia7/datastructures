@@ -8,6 +8,7 @@ import datastructures.ch4.PriorityQueue;
 import datastructures.ch4.Reverser;
 import datastructures.ch5.LinkedList;
 import datastructures.ch6.TriangularNumber;
+import datastructures.ch7.Partition;
 import datastructures.ch7.ShellSort;
 
 import java.io.BufferedReader;
@@ -42,7 +43,8 @@ public class TestApp {
         //testApp.testPriorityQueue();
         //testApp.testLinkedList();
         //testApp.testTriangleNumbers();
-        testApp.testShellSorting();
+        //testApp.testShellSorting();
+        testApp.testPartition();
 
         /*
         Date end = new Date();
@@ -173,5 +175,23 @@ public class TestApp {
         System.out.println("Time: " + System.currentTimeMillis() + " - " + array.toString());
         shellSort.shellSort();
         System.out.println("Time: " + System.currentTimeMillis() + " - " + array.toString());
+    }
+
+    private void testPartition() {
+
+        int maxSize = 10;
+        HighArray array = new HighArray(maxSize);
+
+
+        for(int i = 0; i < maxSize; i++) {
+            long n = (int)(Math.random() * 99);
+            array.insert(n);
+        }
+
+        Partition partition = new Partition(array);
+
+        System.out.println(array.toString());
+        partition.partition();
+        System.out.println(array.toString());
     }
 }
