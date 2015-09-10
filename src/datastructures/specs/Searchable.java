@@ -8,5 +8,5 @@ package datastructures.specs;
  */
 public interface Searchable {
 
-    public long getSearchKey();
+    public long searchBy();
 }

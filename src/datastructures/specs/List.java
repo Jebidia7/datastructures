@@ -6,21 +6,23 @@ package datastructures.specs;
  * Date: 9/4/14
  * Time: 3:37 PM
  */
-public interface List<Element> {
+public interface List<T> {
 
-    public void insert(Element element);
+    public void insert(T element);
 
-    public Element first();
+    public T first();
 
-    public Element last();
+    public T last();
 
-    public Element find(Searchable element);
+    public T find(Searchable element);
 
-    public void remove(Element element);
+    public void remove(T element);
 
-    public Element getAt(int position);
+    public T getAt(int position);
 
     public void removeAt(int position);
 
     public void sort();
+
+    public Iterator<T> iterator();
 }
